@@ -83,7 +83,7 @@ def get_json_filenames(directory: str):
 
     Obtiene todos las rutas de los archivos json de una carpeta dada
     """
-    return iglob(f"./{directory}/*.json")
+    return iglob(f"{directory}/*metadata.json")
 
 
 def get_dictionary_by_keys(
