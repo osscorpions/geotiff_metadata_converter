@@ -55,7 +55,7 @@ def transform_dict(dictionary: dict):
     return output_dict | dictionary["properties"] | separated_dict | satellite
 
 
-def sepatate_date_to_dict(isodate: str) -> dict:
+def sepatate_date_to_dict(isodate_str: str) -> dict:
     """sepatate_date_to_dict
 
     separa un string en formato iso en un diccionario de la forma:
@@ -68,7 +68,7 @@ def sepatate_date_to_dict(isodate: str) -> dict:
     }
     """
     # TODO 2: Separar aquired en hora, día, mes y año con el formato solicitado
-    date = datetime.fromisoformat(isodate)
+    date = datetime.strptime(isodate_str, "%Y-%m-%dT%H:%M:%S.%f%z")
 
     return {
         "time": str(date.time()),
